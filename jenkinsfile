@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+    tools{
+        maven 'M2_HOME'
+    }
+    stages{
+        stage('GIT'){
+            steps{
+                git branch: 'main',
+                url : 'https://github.com/mehdifg/StudentManagementDevOps.git'
+            }
+        }
+        stage('Maven-Build'){
+            steps{
+                sh 'mvn -version'
+                sh 'mvn clean package -DskipTests'
+            }
+        }
+    }
+}
