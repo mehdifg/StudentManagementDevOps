@@ -1,7 +1,4 @@
-FROM openjdk:17-jdk-slim
-
-# Metadata
-LABEL maintainer="yourname"
+FROM eclipse-temurin:21-jdk
 
 # Set working directory
 WORKDIR /app
